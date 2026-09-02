@@ -31,8 +31,6 @@ export default function WorkRow({ project, reversed }) {
       <div>
         <h3 className="font-display text-project-title font-medium text-text">{project.title}</h3>
 
-        {project.meta && <p className="mt-1 text-caption text-text-muted">{project.meta}</p>}
-
         <ul className="mt-3 flex flex-wrap gap-2" aria-label="Technology stack">
           {project.stack.map((tech) => (
             <li
