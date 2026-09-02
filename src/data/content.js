@@ -9,11 +9,21 @@ export const site = {
 }
 
 export const hero = {
-  kicker: 'Sumaiya Alamgir, software engineer in Dhaka',
+  kicker: 'Software engineer in Dhaka',
   headline: 'I build web applications {{from the database up}}.',
   intro:
     'Full-stack developer working mostly in Java, Python and SQL. I like the part of a project where the data model gets decided, and I stay around for the part where it has to actually work.',
   availability: 'Open to internships and graduate roles from September 2026',
+  now: [
+    { label: 'Latest', value: 'Daycare Connect is live', href: 'https://daycare-connect.vercel.app/' },
+    { label: 'Based in', value: 'Dhaka, Bangladesh' },
+    { label: 'Available', value: 'From September 2026, full time' },
+  ],
+}
+
+export const sections = {
+  work: { lead: 'Four projects, most recent first.' },
+  skills: { lead: 'What I use day to day.' },
 }
 
 export const about = {
@@ -27,6 +37,7 @@ export const about = {
 export const projects = [
   {
     title: 'Daycare Connect',
+    meta: '2026, team of three, backend and database',
     stack: ['PostgreSQL', 'Django', 'React', 'Docker'],
     summary: 'A booking platform where parents find daycare providers and manage schedules in one place.',
     built: [
@@ -41,6 +52,7 @@ export const projects = [
   },
   {
     title: 'CleanIt',
+    meta: '2025, solo project, backend',
     stack: ['Java', 'Spring Boot', 'MySQL'],
     summary: 'A backend for booking cleaning services, built to give a frontend something reliable to talk to.',
     built: [
@@ -54,6 +66,7 @@ export const projects = [
   },
   {
     title: 'Airplane Management System',
+    meta: '2024, team project, database design',
     stack: ['Java', 'MySQL'],
     summary: 'A consistent, queryable store for flight schedules, bookings and passenger records.',
     built: [
@@ -67,6 +80,7 @@ export const projects = [
   },
   {
     title: 'Human Following Robot',
+    meta: '2024, team project, hardware and firmware',
     stack: ['Arduino', 'Sonar (ultrasonic) sensor', 'IR sensors'],
     summary: 'An Arduino robot that tracks and follows the nearest obstacle in front of it.',
     built: [
@@ -109,4 +123,9 @@ export const certifications = [
 export const contact = {
   heading: "Let's talk.",
   line: "I'm looking for an internship or graduate role in Dhaka.",
+  details: [
+    { label: 'Looking for', value: 'Backend or full-stack internship, or a graduate role' },
+    { label: 'Based in', value: 'Dhaka, Bangladesh, on-site or hybrid' },
+    { label: 'Available from', value: 'September 2026' },
+  ],
 }

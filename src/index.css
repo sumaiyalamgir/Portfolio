@@ -105,27 +105,6 @@ button:focus-visible,
   text-decoration-color: var(--accent);
 }
 
-/* For links on the accent-coloured footer, where --border/--accent underline
-   colors would be invisible against the same-family accent background. */
-.link-invert {
-  color: #fff;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.45);
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.15s ease;
-}
-
-.link-invert:hover {
-  text-decoration-color: #fff;
-}
-
-/* The default focus ring is accent-coloured and would disappear on the
-   accent-coloured footer, so it gets a white ring instead. */
-.footer-invert a:focus-visible,
-.footer-invert button:focus-visible {
-  outline-color: #fff;
-}
-
 .skip-link {
   position: absolute;
   left: -9999px;

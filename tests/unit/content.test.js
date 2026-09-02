@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   site,
   hero,
+  sections,
   about,
   projects,
   skills,
@@ -24,6 +25,21 @@ describe('content.js', () => {
     expect(hero.availability).toBeTruthy()
   })
 
+  it('hero.now has labelled rows, and the first one links out', () => {
+    expect(Array.isArray(hero.now)).toBe(true)
+    expect(hero.now.length).toBeGreaterThan(0)
+    for (const item of hero.now) {
+      expect(item.label).toBeTruthy()
+      expect(item.value).toBeTruthy()
+    }
+    expect(hero.now[0].href).toBeTruthy()
+  })
+
+  it('sections has a lead for work and skills', () => {
+    expect(sections.work.lead).toBeTruthy()
+    expect(sections.skills.lead).toBeTruthy()
+  })
+
   it('about has a non-empty list of paragraphs', () => {
     expect(Array.isArray(about.paragraphs)).toBe(true)
     expect(about.paragraphs.length).toBeGreaterThan(0)
@@ -42,15 +58,19 @@ describe('content.js', () => {
       expect(project.summary).toBeTruthy()
       expect(Array.isArray(project.built)).toBe(true)
       expect(project.built.length).toBeGreaterThan(0)
-      for (const field of ['next', 'repo', 'live']) {
-        expect(project[field] === null || typeof project[field] === 'string').toBe(true)
+      for (const field of ['next', 'repo', 'live', 'meta', 'diagram']) {
+        expect(project[field] === undefined || project[field] === null || typeof project[field] === 'string').toBe(
+          true,
+        )
       }
     }
   })
 
   it('no bracket placeholders remain in filled-in project fields', () => {
     for (const project of projects) {
-      const filled = [project.summary, ...project.stack, ...project.built, project.repo].filter(Boolean)
+      const filled = [project.summary, project.meta, ...project.stack, ...project.built, project.repo].filter(
+        Boolean,
+      )
       for (const value of filled) {
         expect(value).not.toMatch(/[[\]]/)
       }
@@ -90,9 +110,19 @@ describe('content.js', () => {
     }
   })
 
-  it('contact has a heading and a line', () => {
+  it('contact has a heading, a line, and labelled detail rows', () => {
     expect(contact.heading).toBeTruthy()
     expect(contact.line).toBeTruthy()
+    expect(Array.isArray(contact.details)).toBe(true)
+    expect(contact.details.length).toBeGreaterThan(0)
+    for (const detail of contact.details) {
+      expect(detail.label).toBeTruthy()
+      expect(detail.value).toBeTruthy()
+    }
+  })
+
+  it('does not ask to be emailed constantly', () => {
+    expect(contact.line.toLowerCase()).not.toMatch(/read every email/)
   })
 
   it('carries no testing/SQA framing', () => {

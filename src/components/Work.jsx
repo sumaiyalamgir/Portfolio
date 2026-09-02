@@ -1,4 +1,4 @@
-import { projects } from '../data/content'
+import { projects, sections } from '../data/content'
 import WorkRow from './WorkRow'
 
 export default function Work() {
@@ -8,6 +8,7 @@ export default function Work() {
         <h2 id="work-heading" className="font-display text-section-lg font-medium text-text">
           Work
         </h2>
+        {sections.work?.lead && <p className="mt-2 text-body text-text-muted">{sections.work.lead}</p>}
 
         <div className="mt-10 flex flex-col gap-16 md:gap-24">
           {projects.map((project, i) => (
