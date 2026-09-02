@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { site } from '../data/content'
+import { withBase } from '../lib/url'
 
 const navLinks = [
   { href: '#work', label: 'Work' },
@@ -66,7 +67,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href={site.cv}
+              href={withBase(site.cv)}
               download
               className="filled-button no-print rounded-card px-4 py-2 text-caption font-medium"
             >

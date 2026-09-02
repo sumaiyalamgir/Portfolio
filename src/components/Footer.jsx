@@ -1,4 +1,5 @@
 import { site, contact } from '../data/content'
+import { withBase } from '../lib/url'
 
 export default function Footer() {
   return (
@@ -23,7 +24,7 @@ export default function Footer() {
           <a href={site.linkedin} className="link-invert" target="_blank" rel="noreferrer">
             LinkedIn
           </a>
-          <a href={site.cv} download className="link-invert no-print">
+          <a href={withBase(site.cv)} download className="link-invert no-print">
             Download CV
           </a>
         </div>

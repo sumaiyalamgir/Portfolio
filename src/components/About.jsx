@@ -1,4 +1,5 @@
 import { about, site } from '../data/content'
+import { withBase } from '../lib/url'
 
 export default function About() {
   return (
@@ -11,7 +12,7 @@ export default function About() {
         <div className={site.photo ? 'mt-6 grid grid-cols-1 gap-8 md:grid-cols-[200px_1fr]' : 'mt-6'}>
           {site.photo && (
             <img
-              src={site.photo}
+              src={withBase(site.photo)}
               alt={site.name}
               className="h-[200px] w-[200px] rounded-card object-cover"
             />

@@ -22,12 +22,7 @@ The suite exists so the repo itself is evidence of testing ability, not just a c
 ## Build & deploy
 
 ```bash
-npm run build     # outputs to dist/
+npm run build     # outputs to dist/, served at site root
 npm run preview   # serve the production build locally
 ```
 
-Deployment is manual — see section 8 of the documentation. Nothing ships on push.
-
-## Content
-
-All copy lives in `src/data/content.js`. Bracketed placeholders (`[repo]`, `[add: ...]`) mark real values still to be filled in before launch — see the content checklist in section 5 of the documentation.

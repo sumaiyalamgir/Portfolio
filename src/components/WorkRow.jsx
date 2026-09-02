@@ -1,3 +1,5 @@
+import { withBase } from '../lib/url'
+
 export default function WorkRow({ project, reversed }) {
   return (
     <div
@@ -8,7 +10,7 @@ export default function WorkRow({ project, reversed }) {
       <div className="aspect-[16/10] overflow-hidden rounded-card border border-border bg-accent-soft">
         {project.screenshot ? (
           <img
-            src={project.screenshot}
+            src={withBase(project.screenshot)}
             alt={`Screenshot of ${project.title}`}
             className="h-full w-full object-cover"
           />
